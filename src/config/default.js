@@ -26,3 +26,7 @@ export const TitleFont = css`
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
 `;
 
+export const HeaderLogo = css`
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
+
+`;

@@ -6,6 +6,11 @@ export const Content = styled.div`
     width: 960px;
     margin: 0 auto;
     padding: 0 1rem;
+
+    a{
+        text-decoration: none;
+        color: #000;
+    }
 `;
 
 export const Container = styled.div`

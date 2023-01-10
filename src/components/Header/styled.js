@@ -3,6 +3,7 @@ import * as c from '../../config/default'
 export const HeaderNav = styled.header`
     ${c.RobotoFont}
     ${c.Nastaliq}
+    ${c.HeaderLogo}
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -18,7 +19,7 @@ export const LogoTitle = styled.div`
     align-items: center;
     height: 3rem;
     
-    font-family: 'Noto Nastaliq Urdu', sans-serif;
+    font-family: 'PT Serif', serif;
     font-size: 1.5rem;
     text-shadow: inset 0px -3px 2px rgba(10,10,10,0.69);
 

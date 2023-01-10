@@ -10,7 +10,7 @@ function Header() {
             <LogoTitle>
 
                 <Link to={'/'}>
-                    Acervo IFRN
+                    ACERVO ARQUIVÍSTICO 
                 </Link>
 
             </LogoTitle>

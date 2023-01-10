@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Content, Container, Image, Institution, Title, Description, DescriptionContainer, Data, ImageContainer, DetailContainer, TitleTimeContainer } from './styled'
 
 function ObjetsContainer({ objeto }) {
@@ -5,13 +6,17 @@ function ObjetsContainer({ objeto }) {
         <Content>
             <Container>
                 <ImageContainer>
-                    <Image src={'https://via.placeholder.com/250x150.png/269fe6'} alt="ficticio" />
+                    <Link to={'/detail/450'}>
+                        <Image src={'https://via.placeholder.com/250x150.png/269fe6'} alt="ficticio" />
+                    </Link>
+
                 </ImageContainer>
 
                 <DetailContainer>
                     <TitleTimeContainer>
                         <Title>
-                            Oficina de Marcenaria
+                            <Link to={'/detail/450'}>Oficina de Marcenaria</Link>
+                            
                         </Title>
                         <Data>
                             adicionado em: 25/05/1998
@@ -19,7 +24,8 @@ function ObjetsContainer({ objeto }) {
 
                     </TitleTimeContainer>
                     <Institution>
-                        Escola Industrial de Natal
+                        <Link to={'/related'}>Escola Industrial de Natal</Link>
+                        
                     </Institution>
                     <DescriptionContainer>
                         <Description>
