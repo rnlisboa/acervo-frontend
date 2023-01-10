@@ -4,6 +4,7 @@ import Fotos from "../pages/Fotos";
 import Home from "../pages/Home";
 import Videos from "../pages/Videos";
 import Page404 from "../pages/Page404";
+import Detail from "../pages/DetailObject/DetailObject";
 function RoutesApp(){
     return(
         
@@ -12,6 +13,7 @@ function RoutesApp(){
                 <Route path="/fotos" element={<Fotos/>} />
                 <Route path="/documentos" element={<Documentos/>}/>
                 <Route path="/videos" element={<Videos/>}/>
+                <Route path="/detail/:id" element={<Detail/>}/>
                 <Route path="*" element={<Page404/>}/>
             </Routes>
         

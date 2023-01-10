@@ -18,11 +18,11 @@ export const Nastaliq = css`
  @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@700&display=swap');
 `;
 
-export const Quicksand = css`
+export const DescriptionFont = css`
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 `;
 
-export const Mulish = css`
+export const TitleFont = css`
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
 `;
 

@@ -1,4 +1,4 @@
-import ObjetsContainer from "../../components/ObjetsContainer/ObjetsContainer";
+import ObjetsContainer from "../../components/ObjetsContainer";
 
 function Fotos() {
     return (

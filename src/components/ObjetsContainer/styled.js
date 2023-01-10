@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import * as c from '../../config/default'
 export const Content = styled.div`
-    ${c.Quicksand}
-    ${c.Mulish}
+    ${c.DescriptionFont}
+    ${c.TitleFont}
     width: 960px;
     margin: 0 auto;
     padding: 0 1rem;

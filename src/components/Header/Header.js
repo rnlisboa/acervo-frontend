@@ -1,5 +1,5 @@
 import React from "react";
-import { HeaderNav, LogoTitle, FormContainer, Form, Input, Button } from "./Styles";
+import { HeaderNav, LogoTitle, FormContainer, Form, Input, Button } from "./styled";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 

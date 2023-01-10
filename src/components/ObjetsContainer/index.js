@@ -1,4 +1,4 @@
-import { Content, Container, Image, Institution, Title, Description, DescriptionContainer, Data, ImageContainer, DetailContainer, TitleTimeContainer } from './style'
+import { Content, Container, Image, Institution, Title, Description, DescriptionContainer, Data, ImageContainer, DetailContainer, TitleTimeContainer } from './styled'
 
 function ObjetsContainer({ objeto }) {
     return (
