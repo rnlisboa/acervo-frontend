@@ -9,6 +9,11 @@ export const HeaderNav = styled.header`
     justify-content: space-around;
     background-color: ${c.BackgroundHeader};
     padding: 1rem;
+
+    @media (max-width: 1083px){
+     flex-direction: column;
+     align-items: center;
+    }
 `;
 
 

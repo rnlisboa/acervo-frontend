@@ -6,7 +6,8 @@ export const Main = styled.div`
 export const Container = styled.div`
     ${c.DescriptionFont}
     ${c.TitleFont}
-    width: 720px;
+    max-width: 720px;
+    
     height: fit-content;
     margin: 0 auto;
     border-left: 1px solid rgba(0,0,0,0.2);
@@ -21,6 +22,10 @@ export const Container = styled.div`
         color: ${c.OutlineButton};
         padding-right: 1rem;
     }
+
+    @media (max-width: 1083px){
+        width:100%
+    }
 `;
 
 export const ImgContainer = styled.div`
@@ -33,6 +38,9 @@ export const ImgContainer = styled.div`
 
 export const Img = styled.img`
     width:60%;
+    @media (max-width: 1083px){
+        width:100%
+    }
 `;
 
 export const Detail = styled.div`
@@ -42,10 +50,17 @@ export const Detail = styled.div`
 export const DetailContent = styled.div`
     display: flex;
     margin-bottom: 1rem;
+    @media (max-width: 1083px){
+        flex-direction: column;
+    }
 `;
 
 export const Title = styled.div`
     width: 30%;
+    @media (max-width: 1083px){
+        width:100%;
+        border:none;
+    }
     font-family: 'Mulish', sans-serif;
     font-weight: bold;
     margin-right: 1rem;

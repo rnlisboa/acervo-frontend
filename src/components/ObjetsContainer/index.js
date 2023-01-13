@@ -2,6 +2,11 @@ import { Link } from 'react-router-dom';
 import { Content, Container, Image, Institution, Title, Description, DescriptionContainer, Data, ImageContainer, DetailContainer, TitleTimeContainer } from './styled'
 
 function ObjetsContainer({ objeto }) {
+    const desc = `
+    O ofício de carpinteiro e marceneiro tinham as mesmas oficinas
+    para o aprendizado do ofício. Tinha como mestre artífice e
+    professor Juvenal José da Reza, responsável pelo ofício. Iniciava-se o ensino...
+    `
     return (
         <Content>
             <Container>
@@ -16,7 +21,7 @@ function ObjetsContainer({ objeto }) {
                     <TitleTimeContainer>
                         <Title>
                             <Link to={'/detail/450'}>Oficina de Marcenaria</Link>
-                            
+
                         </Title>
                         <Data>
                             adicionado em: 25/05/1998
@@ -25,13 +30,11 @@ function ObjetsContainer({ objeto }) {
                     </TitleTimeContainer>
                     <Institution>
                         <Link to={'/related'}>Escola Industrial de Natal</Link>
-                        
+
                     </Institution>
                     <DescriptionContainer>
                         <Description>
-                            O ofício de carpinteiro e marceneiro tinham as mesmas oficinas
-                            para o aprendizado do ofício. Tinha como mestre artífice e
-                            professor Juvenal José da Reza, responsável pelo ofício. Iniciava-se o ensino...
+                            {desc.slice(0, 70) + '...'}
                         </Description>
                     </DescriptionContainer>
 

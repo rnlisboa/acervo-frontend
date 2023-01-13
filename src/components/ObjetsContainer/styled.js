@@ -3,7 +3,7 @@ import * as c from '../../config/default'
 export const Content = styled.div`
     ${c.DescriptionFont}
     ${c.TitleFont}
-    width: 960px;
+    width: 60%;
     margin: 0 auto;
     padding: 0 1rem;
 
@@ -11,6 +11,7 @@ export const Content = styled.div`
         text-decoration: none;
         color: #000;
     }
+    
 `;
 
 export const Container = styled.div`
@@ -18,6 +19,9 @@ export const Container = styled.div`
     width: 100%;
     border-bottom: 1px solid rgba(0,0,0,0.2);
     padding: 0.5rem;
+    @media (max-width: 1083px){
+     flex-direction: column;
+    }
 `;
 
 export const ImageContainer = styled.div`
@@ -27,11 +31,19 @@ export const ImageContainer = styled.div`
 
 export const DetailContainer = styled.div`
     padding-left: 10px;
+    @media (max-width: 1083px){
+        padding-left: 0;
+        margin-top: 10px;
+    }
 `;
 
 export const TitleTimeContainer = styled.div`
     padding-bottom: 10px;
     display: flex;
+    @media (max-width: 1083px){
+     flex-direction: column;
+     
+    }
 `;
 
 
@@ -46,6 +58,13 @@ export const Title = styled.div`
     font-weight: bold;
     ::after{
         content: ' |';
+    }
+
+    @media (max-width: 1083px){
+        ::after{
+        content: '';
+    }
+    
     }
 `;
 export const Data = styled.div`
@@ -62,9 +81,6 @@ export const DescriptionContainer = styled.div`
 `;
 
 export const Description = styled.p`
-    max-width: 70ch; /* limita o tamanho do container a 150 caracteres */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    
 `
 

@@ -40,8 +40,6 @@ function Sidebar() {
                 
                 
                 
-                
-                
                 <OpenClose onClick={handleClick}>
                     {
                         isSidebarActive ? (
