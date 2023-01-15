@@ -1,14 +1,18 @@
 import Sidebar from "../../components/Sidebar/Sidebar";
+import { Container } from "./styled";
 
-function Fotos(){
+function Fotos() {
     return (
         <>
-        <Sidebar/>
-        <h1>
-            404.
-        </h1>
+            <Sidebar />
+            <Container>
+                <h1>
+                    404
+                </h1>
 
-        <small>Página não encontrada.</small>
+                <small>Página não encontrada.</small>
+            </Container>
+
         </>
     )
 }

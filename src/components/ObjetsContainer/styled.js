@@ -3,84 +3,54 @@ import * as c from '../../config/default'
 export const Content = styled.div`
     ${c.DescriptionFont}
     ${c.TitleFont}
-    width: 60%;
-    margin: 0 auto;
-    padding: 0 1rem;
+`;
 
+export const Container = styled.div`
     a{
         text-decoration: none;
         color: #000;
     }
-    
-`;
-
-export const Container = styled.div`
     display: flex;
-    width: 100%;
     border-bottom: 1px solid rgba(0,0,0,0.2);
-    padding: 0.5rem;
-    @media (max-width: 1083px){
-     flex-direction: column;
-    }
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `;
 
 export const ImageContainer = styled.div`
-    width: 250px;
-    height: 150px;
+    width: 90%;
 `;
 
 export const DetailContainer = styled.div`
-    padding-left: 10px;
-    @media (max-width: 1083px){
-        padding-left: 0;
-        margin-top: 10px;
-    }
+     margin-top: 10px;
 `;
 
 export const TitleTimeContainer = styled.div`
-    padding-bottom: 10px;
+    margin-bottom: 10px;
     display: flex;
+    flex-direction: column;
     @media (max-width: 1083px){
      flex-direction: column;
      
     }
 `;
 
-
-
 export const Image = styled.img`
     width: 100%;
 `;
 
 export const Title = styled.div`
-    padding-right:10px;
     font-family: 'Mulish', sans-serif;
     font-weight: bold;
-    ::after{
-        content: ' |';
-    }
-
-    @media (max-width: 1083px){
-        ::after{
-        content: '';
-    }
     
-    }
-`;
-export const Data = styled.div`
-    font-family: 'Mulish', sans-serif;
-`;
-export const Institution = styled.div`
-    font-size: 0.9rem;
-    font-family: 'Mulish', sans-serif;
 `;
 
-export const DescriptionContainer = styled.div`
+export const Data = styled.small`
     font-family: 'Quicksand', sans-serif;
-    width: 100%;
 `;
 
-export const Description = styled.p`
-    
-`
+
+
+
+
 
