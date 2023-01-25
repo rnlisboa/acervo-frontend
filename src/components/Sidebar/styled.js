@@ -9,7 +9,8 @@ export const SidebarContainer = styled.div`
     -webkit-box-shadow: 5px 2px 18px -3px rgba(0,0,0,0.75);
     -moz-box-shadow: 5px 2px 18px -3px rgba(0,0,0,0.75);
     box-shadow: 5px 2px 18px -3px rgba(0,0,0,0.75);
-
+    height: 100%;
+    z-index: 1000;
 `;
 
 export const Container = styled.div`

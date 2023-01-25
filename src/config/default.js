@@ -19,11 +19,11 @@ export const Nastaliq = css`
 `;
 
 export const DescriptionFont = css`
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 `;
 
 export const TitleFont = css`
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap');
 `;
 
 export const HeaderLogo = css`

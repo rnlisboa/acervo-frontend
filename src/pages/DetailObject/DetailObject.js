@@ -19,7 +19,7 @@ function Detail() {
                     </Title>
 
                     <Description>
-                        <Link to={'/related'}>Escola Industrial de Natal</Link>
+                        <Link to={'/related/escola-industrial-de-natal'}>Escola Industrial de Natal</Link>
 
                     </Description>
                 </DetailContent>
@@ -60,7 +60,7 @@ function Detail() {
                     </Title>
 
                     <Description>
-                        <Link to={'/related'}>Jaecy</Link>
+                        <Link to={'/related/jaecy'}>Jaecy</Link>
 
                     </Description>
                 </DetailContent>
@@ -129,10 +129,10 @@ function Detail() {
                     </Title>
 
                     <Description>
-                        <Link to={'/related'}>Oficinas</Link>
-                        <Link to={'/related'}>Ofícios</Link>
-                        <Link to={'/related'}>Mestres</Link>
-                        <Link to={'/related'}>Contramestres</Link>
+                        <Link to={'/related/oficinas'}>Oficinas</Link>
+                        <Link to={'/related/oficios'}>Ofícios</Link>
+                        <Link to={'/related/mestres'}>Mestres</Link>
+                        <Link to={'/related/contramestres'}>Contramestres</Link>
 
                     </Description>
                 </DetailContent>

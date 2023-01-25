@@ -10,6 +10,7 @@ import {
     FaChevronRight
 } from 'react-icons/fa'
 import { Link } from "react-router-dom";
+
 function Sidebar() {
     let bool = false
     
@@ -19,8 +20,6 @@ function Sidebar() {
         setIsSidebarActive(bool)
     
     }
-    
-    
 
     return (
         <SidebarContainer isActive={isSidebarActive}>

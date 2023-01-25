@@ -4,6 +4,7 @@ export const HeaderNav = styled.header`
     ${c.RobotoFont}
     ${c.Nastaliq}
     ${c.HeaderLogo}
+    ${c.TitleFont}
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -33,6 +34,12 @@ export const LogoTitle = styled.div`
         color: #fff;
     }
     
+`;
+
+export const Navigate = styled.div`
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 `;
 
 export const FormContainer = styled.div`
@@ -68,4 +75,86 @@ export const Button = styled.button`
     border: none;
     position: absolute;
     right: 2px;
+`;
+
+export const NavigateButton = styled.div`
+    
+
+    position: relative;
+    @media (min-width: 818px){
+        display: none;
+    }
+`;
+
+export const NavigateInsideContent= styled.div`
+    width: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: .3rem;
+    color: #fff;
+    margin-left: 1rem;
+    font-family: 'Mulish', sans-serif;
+    font-size: .8rem;
+    background-color: #004080;
+    height: 1.5rem;
+    -webkit-box-shadow: 4px 3px 0px 0px rgba(0,0,0,0.63);
+    -moz-box-shadow: 4px 3px 0px 0px rgba(0,0,0,0.63);
+    box-shadow: 4px 3px 0px 0px rgba(0,0,0,0.63);
+    cursor: pointer;
+    .seta{
+        margin-top: .4rem;
+    }
+    :active{
+        background-color: #004d99;
+        -webkit-box-shadow: 4px 3px 0px 0px rgba(0,0,0,0.23);
+        -moz-box-shadow: 4px 3px 0px 0px rgba(0,0,0,0.23);
+        box-shadow: 4px 3px 0px 0px rgba(0,0,0,0.23);
+    }
+`
+
+export const NavigateText= styled.span`
+
+`
+export const NavigateIcon = styled.span`
+
+`
+
+
+export const NavigateItems = styled.div`
+    width: 11rem;
+    padding: 1rem;
+    z-index: 100;
+    font-family: 'Mulish', sans-serif;
+    height: fit-content;
+    background-color: #fff;
+    position: absolute;
+    top: 2.5rem;
+    right: 0rem;
+    -webkit-box-shadow: 4px 3px 0px 0px rgba(0,0,0,0.23);
+    -moz-box-shadow: 4px 3px 0px 0px rgba(0,0,0,0.23);
+    box-shadow: 4px 3px 0px 0px rgba(0,0,0,0.23);
+`;
+
+export const Square = styled.div`
+    width: 1rem;
+    height: 1rem;
+    background-color: #fff;
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    border-left:1px solid #00000080 ;
+    transform: rotate(45deg);
+`
+export const Item = styled.div`
+    color: black;
+    width: 100%;
+    white-space: nowrap;
+    padding-bottom: 0.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-top: .6rem;
+    border-bottom: 1px solid #00000030;
+    cursor: pointer;
 `;

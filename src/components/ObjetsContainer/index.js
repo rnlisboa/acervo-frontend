@@ -8,13 +8,10 @@ function ObjetsContainer({ objeto }) {
             <Container>
                 <ImageContainer>
                     <Link to={'/detail/450'}>
-                        <Image src={'https://via.placeholder.com/250x150.png/269fe6'} alt="ficticio" />
+                        <Image src={'https://3.bp.blogspot.com/--uwYCgiObKc/U1DieeO4roI/AAAAAAAABHo/VLRunFKu5XQ/s1600/navio.png'} alt="ficticio" />
                     </Link>
-
-                </ImageContainer>
-
-                <DetailContainer>
-                    <TitleTimeContainer>
+                    <DetailContainer className='detail-container'>
+                    <TitleTimeContainer className='title-time'>
                         <Title>
                             <Link to={'/detail/450'}>Oficina de Marcenaria</Link>
 
@@ -26,6 +23,9 @@ function ObjetsContainer({ objeto }) {
                     </TitleTimeContainer>
 
                 </DetailContainer>
+                </ImageContainer>
+
+                
             </Container>
         </Content>
 

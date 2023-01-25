@@ -1,19 +1,21 @@
 import { Routes, Route } from "react-router-dom";
 import Documentos from "../pages/Documentos";
-import Fotos from "../pages/Fotos";
+import Image from "../pages/Imagens";
 import Home from "../pages/Home";
 import Videos from "../pages/Videos";
 import Page404 from "../pages/Page404";
 import Detail from "../pages/DetailObject/DetailObject";
+import Related from "../pages/Related";
 function RoutesApp(){
     return(
         
             <Routes>
                 <Route path="/" element={<Home/>} />
-                <Route path="/imagens" element={<Fotos/>} />
+                <Route path="/imagens" element={<Image/>} />
                 <Route path="/documentos" element={<Documentos/>}/>
                 <Route path="/videos" element={<Videos/>}/>
                 <Route path="/detail/:id" element={<Detail/>}/>
+                <Route path="/related/:slug" element={<Related/>}/>
                 <Route path="*" element={<Page404/>}/>
             </Routes>
         
