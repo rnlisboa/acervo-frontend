@@ -4,13 +4,12 @@ import { FaAngleDown, FaAngleUp, FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function Header() {
-    let bool = true
-    const [isNavActive, setisNavActive] = useState(bool)
+    
+    const [isNavActive, setisNavActive] = useState(false)
 
     function handleClick() {
-        bool = !bool
-        setisNavActive(bool)
-        console.log(isNavActive)
+        
+        setisNavActive(!isNavActive)
     }
     return (
         <HeaderNav isActive={isNavActive}>

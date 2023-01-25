@@ -98,9 +98,6 @@ export const NavigateInsideContent= styled.div`
     font-size: .8rem;
     background-color: #004080;
     height: 1.5rem;
-    -webkit-box-shadow: 4px 3px 0px 0px rgba(0,0,0,0.63);
-    -moz-box-shadow: 4px 3px 0px 0px rgba(0,0,0,0.63);
-    box-shadow: 4px 3px 0px 0px rgba(0,0,0,0.63);
     cursor: pointer;
     .seta{
         margin-top: .4rem;

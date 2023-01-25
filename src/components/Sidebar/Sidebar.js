@@ -12,13 +12,13 @@ import {
 import { Link } from "react-router-dom";
 
 function Sidebar() {
-    let bool = false
     
-    const [isSidebarActive, setIsSidebarActive] = useState(bool)
+    const [isSidebarActive, setIsSidebarActive] = useState(false)
+    
     function handleClick(){
-        bool = !bool
-        setIsSidebarActive(bool)
-    
+        
+        setIsSidebarActive(!isSidebarActive)
+        console.log(isSidebarActive)
     }
 
     return (
@@ -42,7 +42,7 @@ function Sidebar() {
                 <OpenClose onClick={handleClick}>
                     {
                         isSidebarActive ? (
-                            <FaChevronLeft onClick={handleClick}/>
+                            <FaChevronLeft/>
                         ) : (
                             <FaChevronRight/>
                         )
