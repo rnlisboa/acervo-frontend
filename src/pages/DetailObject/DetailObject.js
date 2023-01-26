@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom";
+import img from '../../img/34.jpg'
 import Sidebar from "../../components/Sidebar/Sidebar";
 import { Container, Description, DetailContent, Img, ImgContainer, Main, Title } from "./styled";
 
 function Detail() {
+    const date = new Date()
     return (
         <>
         <Sidebar/>
         <Main>
             <Container>
                 <ImgContainer>
-                    <Img src={'https://via.placeholder.com/1008x1331.png/269fe6'} alt="ficticio" />
+                    <Img src={img} alt="ficticio" />
                 </ImgContainer>
 
 
@@ -50,7 +52,7 @@ function Detail() {
                     </Title>
 
                     <Description>
-                        1942
+                        {date.getFullYear() - 50}
                     </Description>
                 </DetailContent>
 

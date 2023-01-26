@@ -1,15 +1,22 @@
 import React, { useState } from "react";
 import { HeaderNav, LogoTitle, FormContainer, Form, Input, Button, Navigate, NavigateButton, NavigateItems, Square, Item, NavigateInsideContent } from "./styled";
 import { FaAngleDown, FaAngleUp, FaSearch } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Header() {
-    
+    const navigate = useNavigate()
     const [isNavActive, setisNavActive] = useState(false)
 
     function handleClick() {
         
         setisNavActive(!isNavActive)
+    }
+
+    const [query, setQuery] = useState('')
+    
+    function handleSubmit(e){
+        e.preventDefault()
+        navigate(`/search/${query}`)
     }
     return (
         <HeaderNav isActive={isNavActive}>
@@ -24,8 +31,8 @@ function Header() {
 
             <Navigate>
                 <FormContainer>
-                    <Form>
-                        <Input />
+                    <Form onSubmit={handleSubmit}>
+                        <Input type={'text'} value={query} onChange={e => setQuery(e.target.value)} placeholder={'O que está procurando?'} />
                         <Button><FaSearch /></Button>
                     </Form>
                 </FormContainer>

@@ -55,7 +55,8 @@ export const Form = styled.form`
     align-items: center;
     justify-content: center;
     width: 20rem;
-    height: 1.5rem;
+    height: 2rem;
+    padding-left: .5rem;
     position: relative;
     outline: none;
     background-color: white;
@@ -78,8 +79,6 @@ export const Button = styled.button`
 `;
 
 export const NavigateButton = styled.div`
-    
-
     position: relative;
     @media (min-width: 818px){
         display: none;
@@ -128,9 +127,9 @@ export const NavigateItems = styled.div`
     position: absolute;
     top: 2.5rem;
     right: 0rem;
-    -webkit-box-shadow: 4px 3px 0px 0px rgba(0,0,0,0.23);
-    -moz-box-shadow: 4px 3px 0px 0px rgba(0,0,0,0.23);
-    box-shadow: 4px 3px 0px 0px rgba(0,0,0,0.23);
+    border-left: 1px solid #001f3f36;
+    border-right: 2px solid #001f3f36;
+    border-bottom: 2px solid #001f3f36;
 `;
 
 export const Square = styled.div`

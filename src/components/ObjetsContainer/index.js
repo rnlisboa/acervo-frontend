@@ -3,30 +3,33 @@ import img from '../../img/34.jpg'
 import { Content, Container, Image, Title, Data, ImageContainer, DetailContainer, TitleTimeContainer } from './styled'
 
 function ObjetsContainer({ objeto }) {
-    
+    const date = new Date()
     return (
         <Content>
             <Container>
-                <ImageContainer>
-                    <Link to={'/detail/450'}>
+                <Link to={'/detail/450'}>
+                    <ImageContainer>
+
                         <Image src={img} alt="ficticio" />
-                    </Link>
-                    <DetailContainer className='detail-container'>
-                    <TitleTimeContainer className='title-time'>
-                        <Title>
-                            <Link to={'/detail/450'}>Oficina de Marcenaria</Link>
 
-                        </Title>
-                        <Data>
-                            adicionado em: 25/05/1998
-                        </Data>
+                        <DetailContainer className='detail-container'>
+                            <TitleTimeContainer className='title-time'>
+                                <Title>
+                                    Oficina de Marcenaria
+                                </Title>
+                                <Data>
+                                    <small>
+                                    adicionado em: {`${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`}
+                                    </small>
+                                    
+                                    
+                                </Data>
 
-                    </TitleTimeContainer>
+                            </TitleTimeContainer>
+                        </DetailContainer>
+                    </ImageContainer>
+                </Link>
 
-                </DetailContainer>
-                </ImageContainer>
-
-                
             </Container>
         </Content>
 

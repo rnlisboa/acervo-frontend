@@ -18,7 +18,7 @@ function Sidebar() {
     function handleClick(){
         
         setIsSidebarActive(!isSidebarActive)
-        console.log(isSidebarActive)
+       
     }
 
     return (

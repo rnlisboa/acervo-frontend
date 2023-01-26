@@ -6,6 +6,7 @@ import Videos from "../pages/Videos";
 import Page404 from "../pages/Page404";
 import Detail from "../pages/DetailObject/DetailObject";
 import Related from "../pages/Related";
+import Search from "../pages/Search";
 function RoutesApp(){
     return(
         
@@ -16,6 +17,7 @@ function RoutesApp(){
                 <Route path="/videos" element={<Videos/>}/>
                 <Route path="/detail/:id" element={<Detail/>}/>
                 <Route path="/related/:slug" element={<Related/>}/>
+                <Route path="/search/:query" element={<Search/>}/>
                 <Route path="*" element={<Page404/>}/>
             </Routes>
         

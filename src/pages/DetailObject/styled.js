@@ -21,6 +21,11 @@ export const Container = styled.div`
         text-decoration: none;
         color: ${c.OutlineButton};
         padding-right: 1rem;
+        transition: all 300ms;
+    }
+
+    a:hover{
+        font-weight: bold;
     }
 
     @media (max-width: 1083px){
