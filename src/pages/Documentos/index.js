@@ -1,6 +1,7 @@
 import Sidebar from "../../components/Sidebar/Sidebar";
 import NavigationBy from "../../components/NavigationBy/NavigationBy";
 import ObjetsContainer from "../../components/ObjetsContainer";
+import img from '../../assets/img/memorial-thumb.png'
 import {Container, HeaderContainer, Content, Objects} from './styled'
 function Documentos(){
     return (
@@ -13,15 +14,15 @@ function Documentos(){
                 <Content>
                     
                     <Objects className="objetcs">
-                        <ObjetsContainer objeto={'fotos'} />
-                        <ObjetsContainer objeto={'fotos'} />
-                        <ObjetsContainer objeto={'fotos'} />
-                        <ObjetsContainer objeto={'fotos'} />
-                        <ObjetsContainer objeto={'fotos'} />
-                        <ObjetsContainer objeto={'fotos'} />
-                        <ObjetsContainer objeto={'fotos'} />
-                        <ObjetsContainer objeto={'fotos'} />
-                        <ObjetsContainer objeto={'fotos'} />
+                        <ObjetsContainer objeto={img} />
+                        <ObjetsContainer objeto={img} />
+                        <ObjetsContainer objeto={img} />
+                        <ObjetsContainer objeto={img} />
+                        <ObjetsContainer objeto={img} />
+                        <ObjetsContainer objeto={img} />
+                        <ObjetsContainer objeto={img} />
+                        <ObjetsContainer objeto={img} />
+                        <ObjetsContainer objeto={img} />
                     </Objects>
                     <NavigationBy/>
                 </Content>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import img from '../../img/34.jpg'
+
 import { Content, Container, Image, Title, Data, ImageContainer, DetailContainer, TitleTimeContainer } from './styled'
 
 function ObjetsContainer({ objeto }) {
@@ -10,7 +10,7 @@ function ObjetsContainer({ objeto }) {
                 <Link to={'/detail/450'}>
                     <ImageContainer>
 
-                        <Image src={img} alt="ficticio" />
+                        <Image src={objeto} alt="ficticio" />
 
                         <DetailContainer className='detail-container'>
                             <TitleTimeContainer className='title-time'>

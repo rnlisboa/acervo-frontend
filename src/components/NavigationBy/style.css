@@ -19,9 +19,10 @@
     justify-content: space-between;
     font-family: 'Quicksand';
     padding: 0 .1rem;
-    
+    font-weight: 500;
     cursor: pointer;
 }
+
 
 .content:hover .description{
     font-weight: 600;

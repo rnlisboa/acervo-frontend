@@ -46,7 +46,7 @@ export const OpenClose = styled.div`
     background-color: #00000050;
     position: absolute;
     top: 50%;
-    right: -1.1rem;
+    right: -2.5rem;
     border-radius: 50%;
     display: flex;
     justify-content: center;

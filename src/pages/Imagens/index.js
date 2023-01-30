@@ -1,6 +1,7 @@
 import ObjetsContainer from "../../components/ObjetsContainer";
 import NavigationBy from "../../components/NavigationBy/NavigationBy";
 import { Container, Objects, HeaderContainer, Content } from "./styled";
+import img from '../../assets/img/34.jpg'
 import Sidebar from "../../components/Sidebar/Sidebar";
 
 function Image() {
@@ -14,15 +15,18 @@ function Image() {
                 <Content>
                     
                     <Objects className="objetcs">
-                        <ObjetsContainer objeto={'fotos'} />
-                        <ObjetsContainer objeto={'fotos'} />
-                        <ObjetsContainer objeto={'fotos'} />
-                        <ObjetsContainer objeto={'fotos'} />
-                        <ObjetsContainer objeto={'fotos'} />
-                        <ObjetsContainer objeto={'fotos'} />
-                        <ObjetsContainer objeto={'fotos'} />
-                        <ObjetsContainer objeto={'fotos'} />
-                        <ObjetsContainer objeto={'fotos'} />
+                        <ObjetsContainer objeto={img} />
+                        <ObjetsContainer objeto={img} />
+                        <ObjetsContainer objeto={img} />
+                        <ObjetsContainer objeto={img} />
+                        <ObjetsContainer objeto={img} />
+                        <ObjetsContainer objeto={img} />
+                        <ObjetsContainer objeto={img} />
+                        <ObjetsContainer objeto={img} />
+                        <ObjetsContainer objeto={img} />
+                        <ObjetsContainer objeto={img} />
+                        <ObjetsContainer objeto={img} />
+                        <ObjetsContainer objeto={img} />
                     </Objects>
                     <NavigationBy/>
                 </Content>

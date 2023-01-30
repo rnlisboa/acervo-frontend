@@ -4,7 +4,7 @@ import Image from "../pages/Imagens";
 import Home from "../pages/Home";
 import Videos from "../pages/Videos";
 import Page404 from "../pages/Page404";
-import Detail from "../pages/DetailObject/DetailObject";
+import Detail from "../pages/Detalhes";
 import Related from "../pages/Related";
 import Search from "../pages/Search";
 function RoutesApp(){
@@ -12,9 +12,9 @@ function RoutesApp(){
         
             <Routes>
                 <Route path="/" element={<Home/>} />
-                <Route path="/imagens" element={<Image/>} />
-                <Route path="/documentos" element={<Documentos/>}/>
-                <Route path="/videos" element={<Videos/>}/>
+                <Route path="/imagem" element={<Image/>} />
+                <Route path="/documento" element={<Documentos/>}/>
+                <Route path="/video" element={<Videos/>}/>
                 <Route path="/detail/:id" element={<Detail/>}/>
                 <Route path="/related/:slug" element={<Related/>}/>
                 <Route path="/search/:query" element={<Search/>}/>

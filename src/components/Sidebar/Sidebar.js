@@ -12,34 +12,26 @@ import {
 import { Link } from "react-router-dom";
 
 function Sidebar() {
-    
     const [isSidebarActive, setIsSidebarActive] = useState(false)
-    
-    function handleClick(){
-        
-        setIsSidebarActive(!isSidebarActive)
-       
-    }
-
     return (
         <SidebarContainer isActive={isSidebarActive}>
             <Container>
                 <Link to={'/'}>
                 <SidebarItem Icon={FaHome} Text="Home" />
                 </Link>
-                <Link to={'/imagens'}>
+                <Link to={'/imagem'}>
                 <SidebarItem Icon={FaImages} Text="Imagens" />
                 </Link>
-                <Link to={'/videos'}>
+                <Link to={'/video'}>
                 <SidebarItem Icon={FaVideo} Text="Vídeos" />
                 </Link>
-                <Link to={'/documentos'}>
+                <Link to={'/documento'}>
                 <SidebarItem Icon={FaFileAlt} Text="Documentos" />
                 </Link>
                 
                 
                 
-                <OpenClose onClick={handleClick}>
+                <OpenClose onClick={()=>setIsSidebarActive(!isSidebarActive)} oncli>
                     {
                         isSidebarActive ? (
                             <FaChevronLeft/>

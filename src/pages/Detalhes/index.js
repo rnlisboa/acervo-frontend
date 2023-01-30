@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import img from '../../img/34.jpg'
+import img from '../../assets/img/34.jpg'
 import Sidebar from "../../components/Sidebar/Sidebar";
 import { Container, Description, DetailContent, Img, ImgContainer, Main, Title } from "./styled";
 
