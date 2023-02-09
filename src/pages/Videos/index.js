@@ -1,9 +1,11 @@
-import Sidebar from "../../components/Sidebar/Sidebar";
+import HeaderGlobal from "../../components/Header/Header";
+
 
 function Videos(){
     return (
         <>
-        <Sidebar/>
+
+        <HeaderGlobal/>
         <h1>
             Esta é a sessão de Videos.
         </h1>

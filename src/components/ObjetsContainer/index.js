@@ -7,7 +7,7 @@ function ObjetsContainer({ objeto }) {
     return (
         <Content>
             <Container>
-                <Link to={'/detail/450'}>
+                <Link to={'/detalhes/450'}>
                     <ImageContainer>
 
                         <Image src={objeto} alt="ficticio" />

@@ -1,0 +1,30 @@
+
+/* para as div */
+.top, .center, .bottom{
+    width: 70%;
+    border-radius: 0.5rem;
+    height: 2px;
+    background-color: #fff;
+    transition: all 300ms;
+}
+
+.top.true{
+    transform: rotate(40deg) translateY(.3rem) translateX(.3rem);
+    height: 4px;
+    width: 50%;
+    background-color: #000;
+}
+
+.center.true{
+    transform: rotate(45deg) translateY(.3rem) translateX(.25rem);
+    height: 4px;
+    width: 50%;
+    display: none;
+}
+
+.bottom.true{
+    transform: rotate(-45deg) translateY(-.25rem) translateX(.3rem);
+    height: 4px;
+    width: 50%;
+    background-color: #000;
+}

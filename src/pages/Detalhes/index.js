@@ -1,150 +1,159 @@
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react'
+import { Link, useParams } from "react-router-dom";
 import img from '../../assets/img/34.jpg'
-import Sidebar from "../../components/Sidebar/Sidebar";
+import HeaderGlobal from "../../components/Header/Header";
+import NavigationBy from '../../components/NavigationBy/NavigationBy'
+import { api } from '../../services/api'
 import { Container, Description, DetailContent, Img, ImgContainer, Main, Title } from "./styled";
 
 function Detail() {
-    const date = new Date()
+    const { id } = useParams()
+    const [dado, setDado] = useState([])
+    useEffect(() => {
+        async function getData() {
+            const resp = await api.get('show_one/', {
+                params: {
+                    q: id
+                }
+            })
+            setDado(resp.data)
+            console.log(1, dado)
+        }
+
+        getData()
+    }, [])
+    let obj = dado[0]
     return (
         <>
-        <Sidebar/>
-        <Main>
-            <Container>
-                <ImgContainer>
-                    <Img src={img} alt="ficticio" />
-                </ImgContainer>
+            <HeaderGlobal />
+            <Main>
+                <NavigationBy />
+                <Container>
+                    <ImgContainer>
+                        <Img src={`http://127.0.0.1:8000${obj.arquivo}`} alt={obj.titulo} />
+                    </ImgContainer>
 
 
-                <DetailContent>
-                    <Title>
-                        Nome do produtor
-                    </Title>
+                    <DetailContent>
+                        <Title>
+                            Nome do produtor
+                        </Title>
 
-                    <Description>
-                        <Link to={'/related/escola-industrial-de-natal'}>Escola Industrial de Natal</Link>
+                        <Description>
+                            <Link to={`/related/${obj.slug}`}>{obj.nome_produtor}</Link>
 
-                    </Description>
-                </DetailContent>
+                        </Description>
+                    </DetailContent>
 
-                <DetailContent>
-                    <Title>
-                        Diretor
-                    </Title>
+                    <DetailContent>
+                        <Title>
+                            Diretor
+                        </Title>
 
-                    <Description>
-                        Jeremias Pinheiro
-                    </Description>
-                </DetailContent>
+                        <Description>
+                            {obj.nome_diretor}
+                        </Description>
+                    </DetailContent>
 
-                <DetailContent>
-                    <Title>
-                        Título
-                    </Title>
+                    <DetailContent>
+                        <Title>
+                            Título
+                        </Title>
 
-                    <Description>
-                        Oficina de Marcenaria
-                    </Description>
-                </DetailContent>
+                        <Description>
+                            {obj.titulo}
+                        </Description>
+                    </DetailContent>
 
-                <DetailContent>
-                    <Title>
-                        Data
-                    </Title>
+                    <DetailContent>
+                        <Title>
+                            Data
+                        </Title>
 
-                    <Description>
-                        {date.getFullYear() - 50}
-                    </Description>
-                </DetailContent>
+                        <Description>
+                            {obj.data}
+                        </Description>
+                    </DetailContent>
 
-                <DetailContent>
-                    <Title>
-                        Autor
-                    </Title>
+                    <DetailContent>
+                        <Title>
+                            Autor
+                        </Title>
 
-                    <Description>
-                        <Link to={'/related/jaecy'}>Jaecy</Link>
+                        <Description>
+                            <Link to={'/related/jaecy'}>{obj.autor}</Link>
 
-                    </Description>
-                </DetailContent>
+                        </Description>
+                    </DetailContent>
 
-                <DetailContent>
-                    <Title>
-                        Dimensão e suporte
-                    </Title>
+                    <DetailContent>
+                        <Title>
+                            Dimensão e suporte
+                        </Title>
 
-                    <Description>
-                        Dimensão e suporte	Papel fotográfico. Estado de conservação: suporte frágil, imagem esmaecida e manchada. Cromia: Monocromático (P&B). Dimensões: 23 x 17 cm (largura x altura). Possui 2 exemplares
-                    </Description>
-                </DetailContent>
+                        <Description>
+                            {obj.dimensao_suporte}
+                        </Description>
+                    </DetailContent>
 
-                <DetailContent>
-                    <Title>
-                        Entidade custodiadora
-                    </Title>
+                    <DetailContent>
+                        <Title>
+                            Entidade custodiadora
+                        </Title>
 
-                    <Description>
-                        Entidade custodiadora	Arquivo do IFRN/Campus Natal-Central
-                    </Description>
-                </DetailContent>
+                        <Description>
+                            {obj.entidade_curstodiadora}
+                        </Description>
+                    </DetailContent>
 
-                <DetailContent>
-                    <Title>
-                        Localização física
-                    </Title>
+                    <DetailContent>
+                        <Title>
+                            Localização física
+                        </Title>
 
-                    <Description>
-                        Localização física	Gaveteiro 01, pasta suspensa OFICINAS, envelope n.º 03
-                    </Description>
-                </DetailContent>
+                        <Description>
+                            {obj.localizacao_fisica}
+                        </Description>
+                    </DetailContent>
 
-                <DetailContent>
-                    <Title>
-                        Descrição do conteúdo
-                    </Title>
+                    <DetailContent>
+                        <Title>
+                            Descrição do conteúdo
+                        </Title>
 
-                    <Description>
-                        O ensino iniciava-se com o aprendizado das técnicas básicas de trabalho em madeira,
-                        como o uso de ferramentas manuais, a preparação de
-                        materiais e a realização de medições e marcações. Em seguida, o aprendiz era
-                        incentivado a praticar a execução de trabalhos simples, como o corte e encaixe de peças de
-                        madeira, e a realização de reparos em móveis e outros objetos de madeira. Conforme o aprendizado
-                        progredia, ele poderia ser encarregado de projetos mais complexos, como a construção de
-                        móveis e estruturas de madeira. O ofício de carpinteiro e marceneiro exigia muita
-                        habilidade manual e atenção aos detalhes, e os aprendizes eram ensinados a trabalhar
-                        de maneira precisa e cuidadosa para produzir trabalhos de qualidade.
-                    </Description>
-                </DetailContent>
+                        <Description>
+                            {obj.descricao}
+                        </Description>
+                    </DetailContent>
 
-                <DetailContent>
-                    <Title>
-                        Nota explicativa
-                    </Title>
+                    <DetailContent>
+                        <Title>
+                            Nota explicativa
+                        </Title>
 
-                    <Description>
+                        <Description>
+                            {obj.nota_explicativa}
+                        </Description>
+                    </DetailContent>
 
-                    </Description>
-                </DetailContent>
+                    <DetailContent>
+                        <Title>
+                            Categorias
+                        </Title>
 
-                <DetailContent>
-                    <Title>
-                        Categorias
-                    </Title>
-
-                    <Description>
-                        <Link to={'/related/oficinas'}>Oficinas</Link>
-                        <Link to={'/related/oficios'}>Ofícios</Link>
-                        <Link to={'/related/mestres'}>Mestres</Link>
-                        <Link to={'/related/contramestres'}>Contramestres</Link>
-
-                    </Description>
-                </DetailContent>
+                        <Description>
+                            <Link to={'/related/oficinas'}>{obj.categorias}</Link>
 
 
-            </Container>
-        </Main>
+                        </Description>
+                    </DetailContent>
+
+
+                </Container>
+            </Main>
 
         </>
-        
+
 
 
 

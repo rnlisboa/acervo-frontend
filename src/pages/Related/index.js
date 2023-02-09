@@ -1,7 +1,8 @@
 import NavigationBy from "../../components/NavigationBy/NavigationBy";
 import { Container, Objects, HeaderContainer, Content, Item, Header, Body, Title, Author, Description, Data, Type, Separator } from "./styled";
-import Sidebar from "../../components/Sidebar/Sidebar";
+
 import { Link } from "react-router-dom";
+import HeaderGlobal from "../../components/Header/Header";
 
 function Related() {
     const d = new Date()
@@ -18,22 +19,23 @@ function Related() {
     `
     return (
         <>
-            <Sidebar />
+        <HeaderGlobal/>
             <Container>
                 <HeaderContainer>
                     Exibindo 2154 objetos encontrados.
                 </HeaderContainer>
                 <Content>
-
+                    
+                <NavigationBy />
                     <Objects className="objetcs">
                         <Item>
 
                             <Header>
                                 <Author>
-                                    <Link to={'/detail/35'}>Jaecy</Link>
+                                    <Link to={'/detalhes/35'}>Jaecy</Link>
                                 </Author>
                                 <Separator>|</Separator>
-                                <Link to={'/detail/35'}>
+                                <Link to={'/detalhes/35'}>
                                     <Title>Oficina de Marcenaria</Title>
                                 </Link>
                             </Header>
@@ -56,10 +58,10 @@ function Related() {
 
                             <Header>
                                 <Author>
-                                    <Link to={'/detail/35'}>Jaecy</Link>
+                                    <Link to={'/detalhes/35'}>Jaecy</Link>
                                 </Author>
                                 <Separator>|</Separator>
-                                <Link to={'/detail/35'}>
+                                <Link to={'/detalhes/35'}>
                                     <Title>Oficina de Marcenaria</Title>
                                 </Link>
                             </Header>
@@ -82,10 +84,10 @@ function Related() {
 
                             <Header>
                                 <Author>
-                                    <Link to={'/detail/35'}>Jaecy</Link>
+                                    <Link to={'/detalhes/35'}>Jaecy</Link>
                                 </Author>
                                 <Separator>|</Separator>
-                                <Link to={'/detail/35'}>
+                                <Link to={'/detalhes/35'}>
                                     <Title>Oficina de Marcenaria</Title>
                                 </Link>
                             </Header>
@@ -105,7 +107,6 @@ function Related() {
                             </Data>
                         </Item>
                     </Objects>
-                    <NavigationBy />
                 </Content>
 
             </Container>

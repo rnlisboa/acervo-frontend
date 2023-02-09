@@ -1,10 +1,9 @@
 import React from 'react'
 import { Container } from './styles'
 
-const SidebarItem = ({ Icon, Text }) => {
+const SidebarItem = ({ Text }) => {
   return (
     <Container>
-      <Icon />
       {Text}
     </Container>
   )

@@ -12,10 +12,10 @@ function RoutesApp(){
         
             <Routes>
                 <Route path="/" element={<Home/>} />
-                <Route path="/imagem" element={<Image/>} />
-                <Route path="/documento" element={<Documentos/>}/>
-                <Route path="/video" element={<Videos/>}/>
-                <Route path="/detail/:id" element={<Detail/>}/>
+                <Route path="/imagens" element={<Image/>} />
+                <Route path="/documentos" element={<Documentos/>}/>
+                <Route path="/videos" element={<Videos/>}/>
+                <Route path="/detalhes/:id" element={<Detail/>}/>
                 <Route path="/related/:slug" element={<Related/>}/>
                 <Route path="/search/:query" element={<Search/>}/>
                 <Route path="*" element={<Page404/>}/>

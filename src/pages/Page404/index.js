@@ -1,10 +1,10 @@
-import Sidebar from "../../components/Sidebar/Sidebar";
+import HeaderGlobal from "../../components/Header/Header";
 import { Container } from "./styled";
 
 function Fotos() {
     return (
         <>
-            <Sidebar />
+        <HeaderGlobal/>
             <Container>
                 <h1>
                     404

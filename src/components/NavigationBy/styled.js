@@ -6,7 +6,8 @@ import * as c from '../../config/default'
 export const Container = styled.div`
     ${c.TitleFont}
     ${c.DescriptionFont}
-    width: 20rem;
+    width: 20%;
+    min-width: 16.5rem;
     margin-right: 2rem;
     height: fit-content;
     ul{
@@ -28,7 +29,7 @@ export const Header = styled.header`
     
     display: flex;
     justify-content: space-between;
-    text-transform: capitalize;
+    text-transform: uppercase;
     align-items: center;
     padding: .3rem 0.2rem;
     font-size: 1.1rem;

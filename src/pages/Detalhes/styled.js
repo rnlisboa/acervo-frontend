@@ -2,6 +2,7 @@ import styled from "styled-components";
 import * as c from "../../config/default"
 export const Main = styled.div`
     padding: 5rem;
+    display: flex;
 `;
 export const Container = styled.div`
     ${c.DescriptionFont}

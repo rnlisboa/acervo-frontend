@@ -15,9 +15,6 @@ export const Container = styled.div`
     margin: 0 15px 20px;
     transition: all 100ms;
     width: 80%;
-    > svg {
-        margin: 0 20px;
-    }
 
     &:hover {
         color: #001F3F98;

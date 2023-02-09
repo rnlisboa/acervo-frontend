@@ -1,47 +1,51 @@
-import React, {useState} from "react";
-import { Container, OpenClose, SidebarContainer } from "./styled";
+import React, { useState} from "react";
+import { FaSearch } from "react-icons/fa";
+import { Container, SidebarContainer, FormContainer, Form, Input, Button, Navigate, } from "./styled";
 import SidebarItem from "../SidebarItem";
-import {
-    FaHome,
-    FaImages,
-    FaVideo,
-    FaFileAlt,
-    FaChevronLeft,
-    FaChevronRight
-} from 'react-icons/fa'
-import { Link } from "react-router-dom";
 
-function Sidebar() {
-    const [isSidebarActive, setIsSidebarActive] = useState(false)
+import { Link, useNavigate } from "react-router-dom";
+
+function Sidebar({ isSidebarActive }) {
+    const navigate = useNavigate()
+    const [query, setQuery] = useState('')
+
+
+    function handleSubmit(e){
+        e.preventDefault()
+        if(query.length === 0) return
+        
+        navigate(`/search/${query}`)
+    }
+   
     return (
         <SidebarContainer isActive={isSidebarActive}>
             <Container>
                 <Link to={'/'}>
-                <SidebarItem Icon={FaHome} Text="Home" />
+                    <SidebarItem Text="Home" />
                 </Link>
-                <Link to={'/imagem'}>
-                <SidebarItem Icon={FaImages} Text="Imagens" />
+                <Link to={'/imagens'}>
+                    <SidebarItem Text="Imagens" />
                 </Link>
-                <Link to={'/video'}>
-                <SidebarItem Icon={FaVideo} Text="Vídeos" />
+                <Link to={'/videos'}>
+                    <SidebarItem Text="Vídeos" />
                 </Link>
-                <Link to={'/documento'}>
-                <SidebarItem Icon={FaFileAlt} Text="Documentos" />
+                <Link to={'/documentos'}>
+                    <SidebarItem Text="Documentos" />
+                    <Link to={'/recentes'}>
+                        <SidebarItem Text={"Recém publicados"} />
+                    </Link>
                 </Link>
-                
-                
-                
-                <OpenClose onClick={()=>setIsSidebarActive(!isSidebarActive)} oncli>
-                    {
-                        isSidebarActive ? (
-                            <FaChevronLeft/>
-                        ) : (
-                            <FaChevronRight/>
-                        )
-                    }
-                </OpenClose>
-
+                <Navigate>
+                <FormContainer>
+                    <Form onSubmit={handleSubmit}>
+                        <Input type={'text'} value={query} onChange={e => setQuery(e.target.value)} placeholder={'O que está procurando?'} />
+                        <Button><FaSearch /></Button>
+                    </Form>
+                </FormContainer>
+            </Navigate>
             </Container>
+
+            
         </SidebarContainer>
 
     )

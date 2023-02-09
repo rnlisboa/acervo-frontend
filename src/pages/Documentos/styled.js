@@ -5,13 +5,15 @@ export const Container = styled.div`
     ${c.DescriptionFont}
     display: flex;
     flex-direction: column;
+    padding: 3rem;
 `;
 
 export const HeaderContainer = styled.div`
     font-family: "Quicksand", sans-serif;
     width: 100%;
-    padding: 6rem;
-    font-size: 3rem;
+    text-align: center;
+    padding:3rem 0;
+    font-size: 2rem;
 `;
 
 export const Content = styled.div`
