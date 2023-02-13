@@ -35,9 +35,7 @@ export const Navigate = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    @media (max-width: 818px){
-        display: none;
-    }
+    
 `;
 
 export const FormContainer = styled.div`
@@ -45,7 +43,9 @@ export const FormContainer = styled.div`
     align-items: center;
     justify-content: center;
     width: 20rem;
-    
+    @media (max-width: 818px){
+        display: none;
+    }
 `;
 
 export const Form = styled.form`

@@ -5,7 +5,6 @@ export const Container = styled.div`
     ${c.DescriptionFont}
     display: flex;
     flex-direction: column;
-    padding: 3rem;
 `;
 
 export const HeaderContainer = styled.div`

@@ -1,6 +1,6 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import { Container, SidebarContainer, FormContainer, Form, Input, Button, Navigate, } from "./styled";
+import { Container, SidebarContainer, FormContainer, Form, Input, Button, } from "./styled";
 import SidebarItem from "../SidebarItem";
 
 import { Link, useNavigate } from "react-router-dom";
@@ -10,16 +10,22 @@ function Sidebar({ isSidebarActive }) {
     const [query, setQuery] = useState('')
 
 
-    function handleSubmit(e){
+    function handleSubmit(e) {
         e.preventDefault()
-        if(query.length === 0) return
-        
+        if (query.length === 0) return
+
         navigate(`/search/${query}`)
     }
-   
+
     return (
         <SidebarContainer isActive={isSidebarActive}>
             <Container>
+                <FormContainer>
+                    <Form onSubmit={handleSubmit}>
+                        <Input type={'text'} value={query} onChange={e => setQuery(e.target.value)} placeholder={'O que está procurando?'} />
+                        <Button><FaSearch /></Button>
+                    </Form>
+                </FormContainer>
                 <Link to={'/'}>
                     <SidebarItem Text="Home" />
                 </Link>
@@ -31,21 +37,16 @@ function Sidebar({ isSidebarActive }) {
                 </Link>
                 <Link to={'/documentos'}>
                     <SidebarItem Text="Documentos" />
-                    <Link to={'/recentes'}>
-                        <SidebarItem Text={"Recém publicados"} />
-                    </Link>
                 </Link>
-                <Navigate>
-                <FormContainer>
-                    <Form onSubmit={handleSubmit}>
-                        <Input type={'text'} value={query} onChange={e => setQuery(e.target.value)} placeholder={'O que está procurando?'} />
-                        <Button><FaSearch /></Button>
-                    </Form>
-                </FormContainer>
-            </Navigate>
+                <Link to={'/recentes'}>
+                    <SidebarItem Text={"Recém publicados"} />
+                </Link>
+
+
+
             </Container>
 
-            
+
         </SidebarContainer>
 
     )

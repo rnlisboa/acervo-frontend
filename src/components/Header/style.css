@@ -23,7 +23,7 @@
 }
 
 .bottom.true{
-    transform: rotate(-45deg) translateY(-.25rem) translateX(.3rem);
+    transform: rotate(-45deg) translateY(-.25rem) translateX(.36rem);
     height: 4px;
     width: 50%;
     background-color: #000;

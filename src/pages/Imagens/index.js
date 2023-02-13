@@ -22,7 +22,6 @@ function Image() {
                 }
             })
             setDados(resp.data.results)
-            console.log(dados)
         }
         getData()
     }, [])
@@ -51,7 +50,7 @@ function Image() {
                                     <div key={obj.id} className="container">
                                         <img src={`http://127.0.0.1:8000${obj.thumbnail}`} alt={obj.titulo} />
                                         <div className="informations">
-                                            <div className="title">{obj.titulo}</div>
+                                            <div className="title">{obj.titulo.length > 25 ? (obj.titulo.slice(0,22) + '...') : (obj.titulo)}</div>
                                             <small className="data">adicionado em: {obj.created_at.slice(8, 10)}/{obj.created_at.slice(5, 7)}/{obj.created_at.slice(0, 4)}</small>
                                         </div>
                                     </div>

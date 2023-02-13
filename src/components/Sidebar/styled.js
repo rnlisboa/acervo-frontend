@@ -21,6 +21,7 @@ export const Container = styled.div`
     height: 100vh;
     display: flex;
     align-items: center;
+    gap: 2rem;
     justify-content: center;
     flex-direction: column;
     position: relative;
@@ -31,50 +32,16 @@ export const Container = styled.div`
     }
 `;
 
-export const ItemContainer = styled.div`
 
-`;
 
-export const ItemIcon = styled.div`
 
-`;
-
-export const Item = styled.div`
-
-`;
-
-export const OpenClose = styled.div`
-    width: 2rem;
-    height: 2rem;
-    background-color: #00000050;
-    position: absolute;
-    top: 50%;
-    right: -2.5rem;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    svg{
-        color: #fff;
-    }
-`;
-
-export const Navigate = styled.div`
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    @media (max-width: 818px){
-        display: none;
-    }
-`;
 
 export const FormContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 20rem;
-    
+    width: 80%;
+    border: 1px solid #001F3F;
 `;
 
 export const Form = styled.form`

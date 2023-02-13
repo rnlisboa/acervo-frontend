@@ -12,19 +12,17 @@ function Search() {
         async function getData() {
             const resp = await api.get('search/', {
                 params: {
-                    q: query
+                    q: query,
+                    page: 1
                 }
             })
-            console.log(resp)
-            setDados(resp.data)
-            console.log(dados)
-
+            //console.log(resp.data.results)
+            setDados(resp.data.results)
+            //console.log(dados)
         }
         getData()
     }, [])
-    let objetos = dados
-    Object.values(objetos)
-
+    let objetos = Object.values(dados)
     return (
         <>
             <HeaderGlobal />
@@ -35,15 +33,16 @@ function Search() {
                             objetos.length > 0 ? (
                                 <span>Encontrados {objetos.length} resultados para "{query}".</span>
                             ) :
-                            (
-                                <span>Não encontramos uma publicação com o termo "{query}"</span>
-                            )
+                                (
+                                    <span>Não encontramos uma publicação com o termo "{query}"</span>
+                                )
                         }
                     </HeaderContent>
                 </HeaderContainer>
                 <Content>
 
                     <NavigationBy />
+                    
                     <Objects className="objetcs">
                         {
                             objetos.map(obj => (
@@ -78,6 +77,7 @@ function Search() {
                         }
 
                     </Objects>
+
                 </Content>
 
             </Container>
