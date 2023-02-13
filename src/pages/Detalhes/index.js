@@ -4,7 +4,7 @@ import img from '../../assets/img/34.jpg'
 import HeaderGlobal from "../../components/Header/Header";
 import NavigationBy from '../../components/NavigationBy/NavigationBy'
 import { api } from '../../services/api'
-import { Container, Section, Description, DetailContent, Img, Document, ImgContainer, Main, Tag, TagContainer, Title } from "./styled";
+import { Container, Section, Description, DetailContent, Img, ImgContainer, Main, Tag, TagContainer, Title } from "./styled";
 
 function Detail() {
     const { id } = useParams()
