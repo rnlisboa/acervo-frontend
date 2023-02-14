@@ -9,6 +9,7 @@ function Search() {
     const { query } = useParams()
     const [dados, setDados] = useState([])
     useEffect(() => {
+        console.log('iniciando requisição')
         async function getData() {
             const resp = await api.get('search/', {
                 params: {
@@ -16,9 +17,7 @@ function Search() {
                     page: 1
                 }
             })
-            //console.log(resp.data.results)
             setDados(resp.data.results)
-            //console.log(dados)
         }
         getData()
     }, [])
@@ -65,7 +64,7 @@ function Search() {
                                     </Body>
                                     <Data>
                                         <span>
-                                            publicado em: {obj.created_at.slice(8, 10)}/{obj.created_at.slice(5, 7)}/{obj.created_at.slice(0, 4)}
+                                            adicionado em: {obj.created_at.slice(8, 10)}/{obj.created_at.slice(5, 7)}/{obj.created_at.slice(0, 4)}
                                         </span>
                                         <Separator>|</Separator>
                                         <small>

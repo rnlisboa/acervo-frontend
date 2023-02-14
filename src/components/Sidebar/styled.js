@@ -41,7 +41,7 @@ export const FormContainer = styled.div`
     align-items: center;
     justify-content: center;
     width: 80%;
-    border: 1px solid #001F3F;
+    border: 3px solid #001F3F50;
 `;
 
 export const Form = styled.form`
@@ -49,7 +49,7 @@ export const Form = styled.form`
     align-items: center;
     justify-content: center;
     width: 20rem;
-    height: 2rem;
+    height: 2.5rem;
     padding-left: .5rem;
     position: relative;
     outline: none;

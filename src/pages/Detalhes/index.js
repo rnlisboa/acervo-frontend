@@ -27,12 +27,13 @@ function Detail() {
 
             <Main>
                 <TagContainer>
-                    <Tag>
+                    
                         {
-                            dado.length > 0 && <Link to={`/related/tag`}>{obj.tags[0].name}</Link>
+                            dado.length > 0 && 
+                                obj.tags.map(tag => <Tag key={obj.tags.indexOf(tag)}>  <Link to={`/related/tag`}>{tag.name}</Link> </Tag>) 
                         }
 
-                    </Tag>
+                    
                 </TagContainer>
                 <Section>
                     <NavigationBy />
@@ -56,7 +57,8 @@ function Detail() {
                                         Nome do produtor
                                     </Title>
                                     <Description>
-                                        <Link to={`/related/teste`}>{obj.nome_produtor.nome_produtor}</Link>
+                                        {/* <Link to={`/related/teste`}>{obj.nome_produtor.nome_produtor}</Link> */}
+                                        {obj.nome_produtor.nome_produtor}
                                     </Description>
                                 </DetailContent>
                             }
@@ -96,7 +98,8 @@ function Detail() {
                                         Autor
                                     </Title>
                                     <Description>
-                                        <Link to={`/related/${obj.autor}`}>{obj.autor}</Link>
+                                        {/* <Link to={`/related/${obj.autor}`}>{obj.autor}</Link> */}
+                                        {obj.autor}
                                     </Description>
                                 </DetailContent>
                             }
@@ -169,7 +172,7 @@ function Detail() {
                                 </Title>
 
                                 <Description>
-                                    <Link to={'/related/oficinas'}>{obj.categorias.nome_categoria}</Link>
+                                    <Link to={`/related/${obj.categorias.nome_categoria}`}>{obj.categorias.nome_categoria}</Link>
                                 </Description>
                             </DetailContent>
 

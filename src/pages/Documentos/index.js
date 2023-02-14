@@ -43,7 +43,7 @@ function Documentos() {
                 </HeaderContainer>
                 <Content>
                     <NavigationBy />
-                    <Objects>
+                    <Objects >
                         {
                             objetos.map(obj => (
                                 <Link to={`/detalhes/${obj.id}`}>
