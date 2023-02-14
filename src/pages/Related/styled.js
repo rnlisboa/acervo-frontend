@@ -5,14 +5,23 @@ export const Container = styled.div`
     ${c.DescriptionFont}
     display: flex;
     flex-direction: column;
+    padding: 3rem;
 `;
 
 export const HeaderContainer = styled.div`
     font-family: "Quicksand", sans-serif;
     width: 100%;
-    padding: 6rem;
+    padding: 6rem 0;
     font-size: 3rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;
+
+export const HeaderContent = styled.div`
+    width: 50%;
+`
 
 export const Content = styled.div`
     display: flex;
@@ -24,8 +33,9 @@ export const Content = styled.div`
 
 export const Objects = styled.div`
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
     gap: 1rem;
     width: 50rem;
     @media (max-width: 1202px){
@@ -41,6 +51,8 @@ export const Objects = styled.div`
     a:hover{
         color: #00000080;
     }
+
+    
 `;
 
 export const Item = styled.div`
@@ -96,5 +108,6 @@ export const Separator = styled.div`
     width: 1px;
     background-color: #00000030;
 `
+
 
 

@@ -1,112 +1,82 @@
+import React, { useState, useEffect } from "react";
 import NavigationBy from "../../components/NavigationBy/NavigationBy";
-import { Container, Objects, HeaderContainer, Content, Item, Header, Body, Title, Author, Description, Data, Type, Separator } from "./styled";
-
-import { Link } from "react-router-dom";
+import { Container, Objects, HeaderContainer, Content, Item, Header, Body, Title, Author, Description, Data, Type, Separator, HeaderContent } from "./styled";
+import { Link, useParams } from "react-router-dom";
 import HeaderGlobal from "../../components/Header/Header";
+import { api } from "../../services/api";
 
-function Related() {
-    const d = new Date()
-    const descri = `
-        O ensino iniciava-se com o aprendizado das técnicas básicas de trabalho em madeira,
-        como o uso de ferramentas manuais, a preparação de
-        materiais e a realização de medições e marcações. Em seguida, o aprendiz era
-        incentivado a praticar a execução de trabalhos simples, como o corte e encaixe de peças de
-        madeira, e a realização de reparos em móveis e outros objetos de madeira. Conforme o aprendizado
-        progredia, ele poderia ser encarregado de projetos mais complexos, como a construção de
-        móveis e estruturas de madeira. O ofício de carpinteiro e marceneiro exigia muita
-        habilidade manual e atenção aos detalhes, e os aprendizes eram ensinados a trabalhar
-        de maneira precisa e cuidadosa para produzir trabalhos de qualidade.
-    `
+function Search() {
+    const { slug } = useParams()
+    const [dados, setDados] = useState([])
+    useEffect(() => {
+        console.log('iniciando requisição')
+        async function getData() {
+            const resp = await api.get('related/', {
+                params: {
+                    q: slug,
+                    page: 1
+                }
+            })
+            setDados(resp.data.results)
+        }
+        getData()
+    }, [])
+    let objetos = Object.values(dados)
     return (
         <>
-        <HeaderGlobal/>
+            <HeaderGlobal />
             <Container>
                 <HeaderContainer>
-                    Exibindo 2154 objetos encontrados.
+                    <HeaderContent>
+                        {
+                            objetos.length > 0 ? (
+                                <span>Encontrados {objetos.length} resultados para "{slug}".</span>
+                            ) :
+                                (
+                                    <span>Não encontramos uma publicação com o termo "{slug}"</span>
+                                )
+                        }
+                    </HeaderContent>
                 </HeaderContainer>
                 <Content>
+
+                    <NavigationBy />
                     
-                <NavigationBy />
                     <Objects className="objetcs">
-                        <Item>
+                        {
+                            objetos.map(obj => (
+                                <Item key={obj.id}>
+                                    <Header>
+                                        <Author>
+                                            <Link to={`/detalhes/${obj.id}`}>
+                                                {obj.autor}
+                                            </Link>
+                                        </Author>
+                                        <Separator>|</Separator>
+                                        <Link to={`/detalhes/${obj.id}`}>
+                                            <Title>{obj.titulo}</Title>
+                                        </Link>
+                                    </Header>
+                                    <Body>
+                                        <Description>
+                                            {obj.descricao.slice(0, 95) + '...'}
+                                        </Description>
+                                    </Body>
+                                    <Data>
+                                        <span>
+                                            adicionado em: {obj.created_at.slice(8, 10)}/{obj.created_at.slice(5, 7)}/{obj.created_at.slice(0, 4)}
+                                        </span>
+                                        <Separator>|</Separator>
+                                        <small>
+                                            <Type>Tipo: {obj.extensao_arquivo}</Type>
+                                        </small>
+                                    </Data>
+                                </Item>
+                            ))
+                        }
 
-                            <Header>
-                                <Author>
-                                    <Link to={'/detalhes/35'}>Jaecy</Link>
-                                </Author>
-                                <Separator>|</Separator>
-                                <Link to={'/detalhes/35'}>
-                                    <Title>Oficina de Marcenaria</Title>
-                                </Link>
-                            </Header>
-                            <Body>
-                                <Description>
-                                    {descri.slice(0, 100) + '...'}
-                                </Description>
-                            </Body>
-                            <Data>
-                                <span>
-                                    publicado em: {`${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`}
-                                </span>
-                                <Separator>|</Separator>
-                                <small>
-                                    <Type>Imagem</Type>
-                                </small>
-                            </Data>
-                        </Item>
-                        <Item>
-
-                            <Header>
-                                <Author>
-                                    <Link to={'/detalhes/35'}>Jaecy</Link>
-                                </Author>
-                                <Separator>|</Separator>
-                                <Link to={'/detalhes/35'}>
-                                    <Title>Oficina de Marcenaria</Title>
-                                </Link>
-                            </Header>
-                            <Body>
-                                <Description>
-                                    {descri.slice(0, 100) + '...'}
-                                </Description>
-                            </Body>
-                            <Data>
-                                <span>
-                                    publicado em: {`${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`}
-                                </span>
-                                <Separator>|</Separator>
-                                <small>
-                                    <Type>Imagem</Type>
-                                </small>
-                            </Data>
-                        </Item>
-                        <Item>
-
-                            <Header>
-                                <Author>
-                                    <Link to={'/detalhes/35'}>Jaecy</Link>
-                                </Author>
-                                <Separator>|</Separator>
-                                <Link to={'/detalhes/35'}>
-                                    <Title>Oficina de Marcenaria</Title>
-                                </Link>
-                            </Header>
-                            <Body>
-                                <Description>
-                                    {descri.slice(0, 100) + '...'}
-                                </Description>
-                            </Body>
-                            <Data>
-                                <span>
-                                    publicado em: {`${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`}
-                                </span>
-                                <Separator>|</Separator>
-                                <small>
-                                    <Type>Imagem</Type>
-                                </small>
-                            </Data>
-                        </Item>
                     </Objects>
+
                 </Content>
 
             </Container>
@@ -117,4 +87,4 @@ function Related() {
     )
 }
 
-export default Related;
+export default Search;
