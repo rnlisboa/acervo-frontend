@@ -3,16 +3,12 @@ import { Link, useParams } from "react-router-dom";
 import HeaderGlobal from "../../components/Header/Header";
 import NavigationBy from '../../components/NavigationBy/NavigationBy'
 import { api } from '../../services/api'
-import { GrDocumentText } from "react-icons/gr"
-import { Container, Section, Description, DetailContent, Img, ImgContainer, Main, Tag, TagContainer, Title, ContainerDocuments, Table, TableHeader, TableRow, TableHeaderCell } from "./styled";
-import { Formata } from '../../config/default';
+import { Container, Section, Description, DetailContent, Img, ImgContainer, Main, Tag, TagContainer, Title } from "./styled";
 
-function Detail() {
+
+function Video() {
     const { id } = useParams()
     const [dado, setDado] = useState([])
-    const [documentos, setDocumentos] = useState([])
-    const [extensao, setExtensao] = useState('')
-    const condicao = 'documento'
 
     useEffect(() => {
         async function getData() {
@@ -22,17 +18,10 @@ function Detail() {
                 }
             })
 
-            setExtensao(resp.data[0].extensao_arquivo)
+            console.log(resp.dado)
             setDado(resp.data)
 
-            const docs = await api.get('arquivos/show/', {
-                params: {
-                    q: 'documento',
-                    page: 1
-                }
-            })
 
-            setDocumentos(docs.data.results)
         }
         getData()
     }, [id])
@@ -45,77 +34,18 @@ function Detail() {
 
 
             <Main>
-                {
-                    extensao === condicao && <ContainerDocuments>
 
-
-                        <Table>
-                            <TableHeader>
-                                <TableRow>
-                                    <TableHeaderCell>Tipo</TableHeaderCell>
-                                    <TableHeaderCell>Título</TableHeaderCell>
-                                    <TableHeaderCell>Autor</TableHeaderCell>
-                                    <TableHeaderCell>Data</TableHeaderCell>
-                                    <TableHeaderCell>Produtor</TableHeaderCell>
-                                </TableRow>
-                            </TableHeader>
-                            {
-                                documentos.map(doc => (
-                                    <tbody key={documentos.indexOf(doc)}>
-
-                                        <TableRow>
-
-                                            <TableHeaderCell><GrDocumentText /> Documento</TableHeaderCell>
-
-
-
-                                            <TableHeaderCell>
-                                                <Link to={`/detalhes/${doc.id}`}>
-                                                    {Formata(doc.titulo, 25)}
-                                                </Link>
-                                            </TableHeaderCell>
-
-
-                                            <TableHeaderCell>{doc.autor !== '' ? Formata(doc.autor, 25) : '-'}</TableHeaderCell>
-
-                                            <TableHeaderCell>{doc.data !== '' ? doc.data : '-'} </TableHeaderCell>
-                                            <TableHeaderCell>
-                                                {
-                                                    doc.nome_produtor ? (
-                                                        <Link to={`/relacionados/${doc.nome_produtor.slug}`}>
-                                                            {doc.nome_produtor.nome_produtor ? Formata(doc.nome_produtor.nome_produtor, 22) : '-'}
-                                                        </Link>
-                                                    ) : '-'
-                                                }
-
-                                            </TableHeaderCell>
-
-                                        </TableRow>
-
-                                    </tbody>
-                                ))
-                            }
-                        </Table>
-
-
-                    </ContainerDocuments>
-                }
 
 
                 <Section>
                     <NavigationBy />
                     {dado.length > 0 &&
                         <Container>
-                            <ImgContainer isDocument={extensao === condicao}>
-                                {
-                                    obj.extensao_arquivo === "documento" ? (
-                                        <a href={`http://127.0.0.1:8000${obj.arquivo}`} target="_blank" rel="noreferrer">
-                                            <Img src={`http://127.0.0.1:8000${obj.thumbnail}`} alt={obj.titulo} />
-                                        </a>
-                                    ) : (
-                                        <Img src={`http://127.0.0.1:8000${obj.arquivo}`} alt={obj.titulo} />
-                                    )
-                                }
+                            <ImgContainer>
+                                <video width="640" height="360" controls>
+                                    <source src={`http://127.0.0.1:8000${obj.arquivo}`} type="video/mp4" />
+                                    <p>Seu navegador não suporta a tag de vídeo.</p>
+                                </video>
 
                             </ImgContainer>
                             <TagContainer>
@@ -263,4 +193,4 @@ function Detail() {
 
 
 
-export default Detail;
+export default Video;

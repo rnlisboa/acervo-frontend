@@ -12,7 +12,7 @@ export const HeaderContainer = styled.div`
     font-family: "Quicksand", sans-serif;
     width: 100%;
     padding: 6rem 0;
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
     display: flex;
     align-items: center;
@@ -27,7 +27,7 @@ export const Content = styled.div`
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    
+    position: relative;
 `;
 
 
@@ -66,7 +66,8 @@ export const Item = styled.div`
 `
 export const Header = styled.div`
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
     font-family: 'Mulish';
     gap: 1rem;
     font-size: 1.5rem;
@@ -79,8 +80,8 @@ export const Body = styled.div`
     
 `
 
-export const Author = styled.div`
-
+export const Author = styled.small`
+    font-size: 1rem;
 `;
 
 export const Title = styled.div`
@@ -108,6 +109,16 @@ export const Separator = styled.div`
     width: 1px;
     background-color: #00000030;
 `
+export const Select = styled.select`
+    position: absolute;
+    top: -3rem;
+    right: 0;
+    font-size: 16px;
+    padding: 10px;
+`;
 
+export const Option = styled.option`
+  font-size: 16px;
+`;
 
 

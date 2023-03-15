@@ -10,26 +10,29 @@ function HeaderGlobal() {
     const [isNavActive, setisNavActive] = useState(false)
     const [query, setQuery] = useState('')
 
-    function handleClick(){
+    function handleClick() {
         setisNavActive(!isNavActive)
         console.log(isNavActive)
     }
-    
-    function handleSubmit(e){
-        if(query.length === 0) return
-        
+
+    function handleSubmit(e) {
+        if (query.length === 0) {
+            e.preventDefault()
+            return
+        }
+
         navigate(`/search/${query}`)
     }
     return (
         <HeaderNav>
 
             <LogoTitle>
-
                 <Link to={'/'}>
-                    ACERVO ARQUIVÍSTICO
+                    <span className="acervo">ACERVO ARQUIVÍSTICO</span>
                 </Link>
-
+                <span className="ifrn">Instituto Federal do Rio Grande do Norte</span>
             </LogoTitle>
+
             <NavigateButton onClick={handleClick} isActive={isNavActive}>
                 <div className={`top ${isNavActive ? 'true' : ''}`}></div>
                 <div className={`center ${isNavActive ? 'true' : ''}`}></div>
@@ -43,7 +46,7 @@ function HeaderGlobal() {
                     </Form>
                 </FormContainer>
             </Navigate>
-            <Sidebar isSidebarActive={isNavActive}/>
+            <Sidebar isSidebarActive={isNavActive} />
         </HeaderNav>
     )
 }

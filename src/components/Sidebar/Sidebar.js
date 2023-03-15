@@ -29,16 +29,19 @@ function Sidebar({ isSidebarActive }) {
                 <Link to={'/'}>
                     <SidebarItem Text="Home" />
                 </Link>
-                <Link to={'/imagens'}>
+                <Link to={'/imagens/1'}>
                     <SidebarItem Text="Imagens" />
                 </Link>
-                <Link to={'/videos'}>
+                <Link to={'/videos/1'}>
                     <SidebarItem Text="Vídeos" />
                 </Link>
-                <Link to={'/documentos'}>
+                <Link to={'/documentos/1'}>
                     <SidebarItem Text="Documentos" />
                 </Link>
-                <Link to={'/recentes'}>
+                <Link to={'/albuns/1'}>
+                    <SidebarItem Text="Álbuns de Fotografias" />
+                </Link>
+                <Link to={'/recentes/1'}>
                     <SidebarItem Text={"Recém publicados"} />
                 </Link>
 

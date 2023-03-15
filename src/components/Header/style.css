@@ -9,22 +9,23 @@
 }
 
 .top.true{
-    transform: rotate(40deg) translateY(.3rem) translateX(.3rem);
+    /* transform: rotate(40deg) translateY(.3rem) translateX(.3rem);
     height: 4px;
-    width: 50%;
+    width: 50%; */
     background-color: #000;
 }
 
 .center.true{
-    transform: rotate(45deg) translateY(.3rem) translateX(.25rem);
+    /* transform: rotate(45deg) translateY(.3rem) translateX(.25rem);
     height: 4px;
     width: 50%;
-    display: none;
+    display: none; */
+    background-color: #000;
 }
 
 .bottom.true{
-    transform: rotate(-45deg) translateY(-.25rem) translateX(.36rem);
+    /* transform: rotate(-45deg) translateY(-.25rem) translateX(.36rem);
     height: 4px;
-    width: 50%;
+    width: 50%; */
     background-color: #000;
 }

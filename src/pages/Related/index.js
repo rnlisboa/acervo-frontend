@@ -1,26 +1,48 @@
 import React, { useState, useEffect } from "react";
 import NavigationBy from "../../components/NavigationBy/NavigationBy";
-import { Container, Objects, HeaderContainer, Content, Item, Header, Body, Title, Author, Description, Data, Type, Separator, HeaderContent } from "./styled";
+import Pagination from "../../components/Paginator/Paginator"
+import { Container, Objects, HeaderContainer, Content, Item, Header, Body, Title, Author, Description, Data, Type, Separator, HeaderContent, Select, Option } from "./styled";
 import { Link, useParams } from "react-router-dom";
 import HeaderGlobal from "../../components/Header/Header";
+import { Formata } from "../../config/default";
 import { api } from "../../services/api";
 
 function Search() {
     const { slug } = useParams()
     const [dados, setDados] = useState([])
+    const [quantidade, setQuantidade] = useState(0)
+    const [currentPage, setCurrentPage] = useState(1);
+    const pageSize = 9;
+
+    const [tipo, setTipo] = useState('');
+
+    const handleSelect = (event) => {
+        setTipo(event.target.value);
+    }
+
+    const handlePageChange = (page) => {
+        setCurrentPage(page);
+    };
+
     useEffect(() => {
-        console.log('iniciando requisição')
         async function getData() {
-            const resp = await api.get('related/', {
+            const resp = await api.get('arquivos/related/', {
                 params: {
                     q: slug,
-                    page: 1
+                    tp: tipo,
+                    page: currentPage
                 }
             })
+            setQuantidade(resp.data.count)
             setDados(resp.data.results)
         }
         getData()
-    }, [])
+
+        const state = window.history.state;
+        if (state && state.page) {
+            setCurrentPage(state.page);
+        }
+    }, [slug, currentPage, tipo])
     let objetos = Object.values(dados)
     return (
         <>
@@ -29,37 +51,42 @@ function Search() {
                 <HeaderContainer>
                     <HeaderContent>
                         {
-                            objetos.length > 0 ? (
-                                <span>Encontrados {objetos.length} resultados para "{slug}".</span>
+                            quantidade > 0 ? (
+                                <span>Encontrados {quantidade} resultados.</span>
                             ) :
                                 (
-                                    <span>Não encontramos uma publicação com o termo "{slug}"</span>
+                                    <span>Sem resultados.</span>
                                 )
                         }
                     </HeaderContent>
                 </HeaderContainer>
                 <Content>
-
+                    <Select value={tipo} onChange={handleSelect}>
+                        <Option value="">Filtre por</Option>
+                        <Option value="video">Vídeo</Option>
+                        <Option value="imagem">Imagem</Option>
+                        <Option value="documento">Documento</Option>
+                    </Select>
                     <NavigationBy />
-                    
+
                     <Objects className="objetcs">
                         {
                             objetos.map(obj => (
                                 <Item key={obj.id}>
                                     <Header>
-                                        <Author>
-                                            <Link to={`/detalhes/${obj.id}`}>
-                                                {obj.autor}
-                                            </Link>
-                                        </Author>
-                                        <Separator>|</Separator>
                                         <Link to={`/detalhes/${obj.id}`}>
                                             <Title>{obj.titulo}</Title>
                                         </Link>
+
+                                        <Author>
+                                            {obj.autor}
+                                        </Author>
+
+
                                     </Header>
                                     <Body>
                                         <Description>
-                                            {obj.descricao.slice(0, 95) + '...'}
+                                            {Formata(obj.descricao, 95)}
                                         </Description>
                                     </Body>
                                     <Data>
@@ -78,6 +105,12 @@ function Search() {
                     </Objects>
 
                 </Content>
+                {quantidade > 0 && <Pagination
+                    totalSize={quantidade}
+                    pageSize={pageSize}
+                    currentPage={currentPage}
+                    onPageChange={handlePageChange}
+                />}
 
             </Container>
 

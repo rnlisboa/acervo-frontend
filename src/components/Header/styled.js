@@ -10,6 +10,7 @@ export const HeaderNav = styled.header`
     justify-content: space-around;
     background-color: ${c.BackgroundHeader};
     padding: 1rem 0;
+
 `;
 
 
@@ -17,16 +18,22 @@ export const HeaderNav = styled.header`
 
 export const LogoTitle = styled.div`
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
     height: 3rem;
     
     font-family: 'PT Serif', serif;
     font-size: 1.5rem;
     text-shadow: inset 0px -3px 2px rgba(10,10,10,0.69);
-
+    color: #fff;
     a{
         text-decoration: none;
         color: #fff;
+    }
+
+    .ifrn{
+        font-size: 50%;
+        text-transform: uppercase;
     }
     
 `;

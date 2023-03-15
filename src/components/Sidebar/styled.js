@@ -41,7 +41,7 @@ export const FormContainer = styled.div`
     align-items: center;
     justify-content: center;
     width: 80%;
-    border: 3px solid #001F3F50;
+    
 `;
 
 export const Form = styled.form`
@@ -54,7 +54,9 @@ export const Form = styled.form`
     position: relative;
     outline: none;
     background-color: white;
-    border-radius: 3px;
+    border: 3px solid #001F3F50;
+
+    
 `;
 
 export const Input = styled.input`
@@ -66,6 +68,7 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
+    cursor: pointer;
     background: none;
     border: none;
     position: absolute;
